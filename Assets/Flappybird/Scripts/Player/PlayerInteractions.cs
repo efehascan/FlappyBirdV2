@@ -4,15 +4,17 @@ using UnityEngine;
 
 namespace Flappybird.Scripts.Player
 {
-    public class PlayerInteraction : Subject
+    public class PlayerInteractions : MonoBehaviour
     {
         private const string Coin = "Coin";
+        
+        public static Action OnCoinCollected;
 
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.gameObject.CompareTag(Coin))
             {
-                NotifyObservers();
+                OnCoinCollected?.Invoke();
                 Destroy(other.gameObject);
             }
         }
