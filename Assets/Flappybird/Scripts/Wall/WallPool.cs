@@ -15,7 +15,7 @@ namespace Flappybird.Scripts.Wall
         private float yMinOffset = -1.75f;
         
         
-        public void CreatePool()
+        public void CreateWallPool()
         {
             wallPool = new List<GameObject>();
 
@@ -38,6 +38,7 @@ namespace Flappybird.Scripts.Wall
                 int randomIndex = Random.Range(0, wallPool.Count);
                 
                 GameObject wall = wallPool[randomIndex];
+                wallPool.RemoveAt(randomIndex);
                 wall.SetActive(true);
                 return wall;
                 

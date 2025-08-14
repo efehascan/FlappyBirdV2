@@ -19,7 +19,7 @@ namespace Flappybird.Scripts.Wall
 
         private void Start()
         {
-            WallPool.Instance.CreatePool();
+            WallPool.Instance.CreateWallPool();
 
             spawnCoroutine = StartCoroutine(StartSpawnCoroutine());
         }
