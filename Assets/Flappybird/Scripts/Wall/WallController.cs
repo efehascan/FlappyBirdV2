@@ -12,7 +12,6 @@ namespace Flappybird.Scripts.Wall
         [SerializeField] private GameObject wallPrefab;
         
         private float yMinOffset = -1.75f;
-        private float yMaxOffset = 4.5f;
         
         
         private Queue<GameObject> wallPool;

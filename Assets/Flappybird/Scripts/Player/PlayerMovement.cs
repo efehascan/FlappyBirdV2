@@ -10,11 +10,11 @@ namespace Flappybird.Scripts.Player
         [SerializeField] private float verticalSpeed;
         [SerializeField] private float rotationSpeed;
         
-        private Rigidbody2D rb2d;
+        private Rigidbody2D _rigidbody2D;
 
         private void Awake()
         {
-            rb2d = GetComponent<Rigidbody2D>();
+            _rigidbody2D = GetComponent<Rigidbody2D>();
         }
 
         private void Update()
@@ -27,10 +27,10 @@ namespace Flappybird.Scripts.Player
         {
             if (Input.GetKeyDown(KeyCode.Space))
             { 
-                rb2d.velocity = Vector2.up * verticalSpeed;
+                _rigidbody2D.velocity = Vector2.up * verticalSpeed;
             }
             
-            transform.rotation = Quaternion.Euler(0, 0, rb2d.velocity.y * rotationSpeed);
+            transform.rotation = Quaternion.Euler(0, 0, _rigidbody2D.velocity.y * rotationSpeed);
         }
 
 
