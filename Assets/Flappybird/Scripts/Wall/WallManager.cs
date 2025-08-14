@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Flappybird.Scripts.SingletonPattern;
 using UnityEngine;
 using UnityEngine.UIElements;
+using Random = UnityEngine.Random;
 
 namespace Flappybird.Scripts.Wall
 {
@@ -17,9 +18,9 @@ namespace Flappybird.Scripts.Wall
         private float yMinOffset = -1.75f;
         
         private Coroutine spawnCoroutine;
-        private WaitForSeconds spawnRoutine = new WaitForSeconds(5f);
+        private readonly WaitForSeconds spawnRoutine = new WaitForSeconds(5f);
         
-        private Queue<GameObject> wallPool;
+        private List<GameObject> wallPool;
 
         private void Start()
         {
@@ -31,7 +32,7 @@ namespace Flappybird.Scripts.Wall
 
         private void CreatePool()
         {
-            wallPool = new Queue<GameObject>();
+            wallPool = new List<GameObject>();
 
 
             for (int i = 0; i < PoolSize; i++)
@@ -40,8 +41,8 @@ namespace Flappybird.Scripts.Wall
                 
                 Vector3 position = new Vector3(0, yPos, 0); 
                 GameObject wall = Instantiate(wallPrefab, position, Quaternion.identity);
-                wall.SetActive(true);
-                wallPool.Enqueue(wall);
+                wall.SetActive(false);
+                wallPool.Add(wall);
             }
         }
 
@@ -49,7 +50,9 @@ namespace Flappybird.Scripts.Wall
         {
             if (wallPool.Count > 0)
             {
-                GameObject wall = wallPool.Dequeue();
+                int randomIndex = Random.Range(0, wallPool.Count);
+                
+                GameObject wall = wallPool[randomIndex];
                 wall.SetActive(true);
                 return wall;
                 
@@ -62,7 +65,7 @@ namespace Flappybird.Scripts.Wall
         private void ReturnWallToPool(GameObject wall)
         {
             wall.SetActive(false);
-            wallPool.Enqueue(wall);
+            wallPool.Add(wall);
         }
 
         private void SpawnWall()
@@ -83,7 +86,7 @@ namespace Flappybird.Scripts.Wall
         }
 
 
-        private void DespawnWall(GameObject wall)
+        public void DespawnWall(GameObject wall)
         {
             var moveComponent = wall.GetComponent<WallMovement>();
 

@@ -5,7 +5,7 @@ namespace Flappybird.Scripts.Wall
 {
     public class WallMovement : MonoBehaviour
     {
-        [SerializeField] private float movementSpeed = 2f;
+        private float movementSpeed = 4f;
         
 
 
