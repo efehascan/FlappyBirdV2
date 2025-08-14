@@ -6,7 +6,7 @@ namespace Flappybird.Scripts.Coin
     {
         public void CollectCoin()
         {
-            CoinManager.Instance.CollectGoldCoin();
+            CoinManager.Instance.AddCoin(50);
         }
     }
 }

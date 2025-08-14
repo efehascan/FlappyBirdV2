@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Flappybird.Scripts.SingletonPattern;
 using UnityEngine;
 
@@ -10,27 +11,12 @@ namespace Flappybird.Scripts.Coin
         [SerializeField] public int coinValue = 0;
         
         public static Action OnCoinValueChanged;
-
-
-        public void CollectBronzCoin()
+        
+        public void AddCoin(int amount)
         {
-            coinValue++;
-            OnCoinValueChanged?.Invoke();
-        }
-
-        public void CollectSilverCoin()
-        {
-            coinValue = coinValue + 10;
-            OnCoinValueChanged?.Invoke();
-        }
-
-
-        public void CollectGoldCoin()
-        {
-            coinValue = coinValue + 50;
+            coinValue += amount;
             OnCoinValueChanged?.Invoke();
         }
         
-
     }
 }

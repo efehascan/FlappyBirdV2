@@ -10,67 +10,25 @@ namespace Flappybird.Scripts.Wall
 {
     public class WallManager : MonoBehaviourSingleton<WallManager>
     {
-        private const int PoolSize = 26;
-        
-        [SerializeField] private GameObject wallPrefab;
+        [SerializeField] public GameObject wallPrefab;
         [SerializeField] private float spawnXOffset = 15;
-        
-        private float yMinOffset = -1.75f;
         
         private Coroutine spawnCoroutine;
         private readonly WaitForSeconds spawnRoutine = new WaitForSeconds(5f);
         
-        private List<GameObject> wallPool;
 
         private void Start()
         {
-            CreatePool();
+            WallPool.Instance.CreatePool();
 
             spawnCoroutine = StartCoroutine(StartSpawnCoroutine());
         }
 
-
-        private void CreatePool()
-        {
-            wallPool = new List<GameObject>();
-
-
-            for (int i = 0; i < PoolSize; i++)
-            {
-                float yPos = yMinOffset + (i * 0.25f);
-                
-                Vector3 position = new Vector3(0, yPos, 0); 
-                GameObject wall = Instantiate(wallPrefab, position, Quaternion.identity);
-                wall.SetActive(false);
-                wallPool.Add(wall);
-            }
-        }
-
-        private GameObject GetWallFromPool()
-        {
-            if (wallPool.Count > 0)
-            {
-                int randomIndex = Random.Range(0, wallPool.Count);
-                
-                GameObject wall = wallPool[randomIndex];
-                wall.SetActive(true);
-                return wall;
-                
-            } else
-                return null;
-            
-            
-        }
-
-        private void ReturnWallToPool(GameObject wall)
-        {
-            wall.SetActive(false);
-            wallPool.Add(wall);
-        }
+        
 
         private void SpawnWall()
         {
-            GameObject wall = GetWallFromPool();
+            GameObject wall = WallPool.Instance.GetWallFromPool();
             
             if (wall == null)
                 return;
@@ -100,7 +58,7 @@ namespace Flappybird.Scripts.Wall
             wall.transform.position = position;
             
             
-            ReturnWallToPool(wall);
+            WallPool.Instance.ReturnWallToPool(wall);
         }
 
 

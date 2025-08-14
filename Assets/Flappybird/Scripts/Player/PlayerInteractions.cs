@@ -7,6 +7,7 @@ namespace Flappybird.Scripts.Player
 {
     public class PlayerInteractions : MonoBehaviour
     {
+        
         private const string Coin = "Coin";
 
         private void OnTriggerEnter2D(Collider2D other)
