@@ -17,7 +17,6 @@ namespace Flappybird.Scripts.Player
             if (other.gameObject.CompareTag(Coin))
             {
                 collectible.CollectCoin();
-                Destroy(other.gameObject);
             }
         }
     }

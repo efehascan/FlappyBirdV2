@@ -1,23 +1,22 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Flappybird.Scripts.Wall
+namespace Flappybird.Scripts.Coin
 {
-    public class WallMovement : MonoBehaviour
+    public class CoinMovement : MonoBehaviour
     {
         private float movementSpeed = 3.5f;
-        
-
 
         private void Update()
         {
-            MoveWall();
+            MoveCoin();
         }
 
 
-        private void MoveWall()
+        private void MoveCoin()
         {
             transform.position += Vector3.left * (movementSpeed * Time.deltaTime);
         }
+        
     }
 }

@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using Flappybird.Scripts.SingletonPattern;
 using UnityEngine;
-using UnityEngine.UIElements;
-using Random = UnityEngine.Random;
+
 
 namespace Flappybird.Scripts.Wall
 {
@@ -14,7 +11,7 @@ namespace Flappybird.Scripts.Wall
         [SerializeField] private float spawnXOffset = 15;
         
         private Coroutine spawnCoroutine;
-        private readonly WaitForSeconds spawnRoutine = new WaitForSeconds(5f);
+        private readonly WaitForSeconds spawnRoutine = new WaitForSeconds(2.5f);
         
 
         private void Start()
