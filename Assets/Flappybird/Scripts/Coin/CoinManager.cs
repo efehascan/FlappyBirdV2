@@ -3,6 +3,7 @@ using System.Collections;
 using Flappybird.Scripts.SingletonPattern;
 using Flappybird.Scripts.Wall;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Flappybird.Scripts.Coin
 {
@@ -14,8 +15,9 @@ namespace Flappybird.Scripts.Coin
         private Coroutine spawnCoroutine;
         private readonly WaitForSeconds spawnRoutine = new WaitForSeconds(2.5f);
         
+        
         [Header("Coin Settings")]
-        [SerializeField] public int coinValue = 0;
+        [SerializeField] public int runCoinValue = 0;
         
         public static Action OnCoinValueChanged;
 
@@ -30,7 +32,7 @@ namespace Flappybird.Scripts.Coin
 
         public void AddCoin(int amount)
         {
-            coinValue += amount;
+            runCoinValue += amount;
             OnCoinValueChanged?.Invoke();
         }
 

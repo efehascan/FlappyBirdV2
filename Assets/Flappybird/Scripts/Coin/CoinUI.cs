@@ -16,7 +16,7 @@ namespace Flappybird.Scripts.Coin
 
         private void CoinManager_OnCoinValueChanged()
         {
-            coinText.text = "Coin: " + CoinManager.Instance.coinValue.ToString();
+            coinText.text = "Coin: " + CoinManager.Instance.runCoinValue.ToString();
         }
 
         private void OnDestroy()
