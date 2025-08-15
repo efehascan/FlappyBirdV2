@@ -9,6 +9,8 @@ namespace Flappybird.Scripts.Wall
     {
         private const int PoolSize = 26;
         
+        [SerializeField] private Transform parent;
+        
         private List<GameObject> wallPool;
         
         
@@ -25,7 +27,7 @@ namespace Flappybird.Scripts.Wall
                 float yPos = yMinOffset + (i * 0.25f);
                 
                 Vector3 position = new Vector3(0, yPos, 0); 
-                GameObject wall = Instantiate(WallManager.Instance.wallPrefab, position, Quaternion.identity);
+                GameObject wall = Instantiate(WallManager.Instance.wallPrefab, position, Quaternion.identity,  parent);
                 wall.SetActive(false);
                 wallPool.Add(wall);
             }

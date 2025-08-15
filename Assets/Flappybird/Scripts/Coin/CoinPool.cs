@@ -8,6 +8,8 @@ namespace Flappybird.Scripts.Coin
     {
         public const int PoolSize = 8;
         
+        [SerializeField] private Transform parent;
+        
         private List<GameObject> coinPool;
 
 
@@ -23,7 +25,7 @@ namespace Flappybird.Scripts.Coin
             {
                 index++;
                 
-                GameObject coin = Instantiate(CoinManager.Instance.coinPrefabs[index], Vector3.zero, Quaternion.identity);
+                GameObject coin = Instantiate(CoinManager.Instance.coinPrefabs[index], Vector3.zero, Quaternion.identity, parent);
                 coin.SetActive(false);
                 coinPool.Add(coin);
             }
