@@ -3,19 +3,19 @@ using UnityEngine;
 
 namespace Flappybird.Scripts.Wall
 {
-    public class WallMovement : MonoBehaviour
+    public class CoinController : MonoBehaviour
     {
-        private float movementSpeed = 3.5f;
+        [SerializeField] private float movementSpeed = 3.5f;
         
 
 
-        private void Update()
+        private void FixedUpdate()
         {
-            MoveWall();
+            MoveCoin();
         }
 
 
-        private void MoveWall()
+        private void MoveCoin()
         {
             transform.position += Vector3.left * (movementSpeed * Time.deltaTime);
         }

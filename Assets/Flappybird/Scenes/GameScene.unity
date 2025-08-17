@@ -881,6 +881,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallPrefab: {fileID: 7235861225048879741, guid: 813d01b0e1f226d4f95fa5b434004ad2, type: 3}
   spawnXOffset: 15
+  spawnMaxYOffset: 4.5
+  spawnMinYOffset: -2.5
 --- !u!1 &1352119767
 GameObject:
   m_ObjectHideFlags: 0
@@ -1081,7 +1083,7 @@ MonoBehaviour:
   - {fileID: 8702181743781412566, guid: 64eb3380d073d854eaf383ec3204d7e3, type: 3}
   - {fileID: 8702181743781412566, guid: 64eb3380d073d854eaf383ec3204d7e3, type: 3}
   - {fileID: 8939418280198724528, guid: 7e76ebe5e61be86419521658921646d0, type: 3}
-  coinValue: 0
+  runCoinValue: 0
 --- !u!1 &2072365653
 GameObject:
   m_ObjectHideFlags: 0

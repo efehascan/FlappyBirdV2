@@ -9,13 +9,14 @@ namespace Flappybird.Scripts.Coin
 {
     public class CoinManager : MonoBehaviourSingleton<CoinManager>
     {
-        public const string Camera = "MainCamera";
+
         [SerializeField] public GameObject[] coinPrefabs;
         
         private Coroutine spawnCoroutine;
         private readonly WaitForSeconds spawnRoutine = new WaitForSeconds(2.5f);
         
         
+
         [Header("Coin Settings")]
         [SerializeField] public int runCoinValue = 0;
         
@@ -50,25 +51,11 @@ namespace Flappybird.Scripts.Coin
             Vector3 spawnPosition = new Vector3(randomX, randomY, 0f);
             coin.transform.position = spawnPosition;
             
-            
-            
-            if (!coin.TryGetComponent<WallMovement>(out _))
-                coin.AddComponent<WallMovement>();
         }
 
 
         public void DespawnCoin(GameObject coin)
         {
-            var moveComponent = coin.GetComponent<WallMovement>();
-            
-            if (moveComponent != null)
-                Destroy(moveComponent);
-            
-            Vector3 position = coin.transform.position;
-            position = new Vector3(0f, 0f, 0f);
-            coin.transform.position = position;
-            
-            
             CoinPool.Instance.ReturnCoinToPool(coin);
         }
         

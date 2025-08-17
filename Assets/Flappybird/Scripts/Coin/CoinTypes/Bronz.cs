@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Flappybird.Scripts.Wall;
+using UnityEngine;
 
 namespace Flappybird.Scripts.Coin.CoinTypes
 {
@@ -12,7 +13,7 @@ namespace Flappybird.Scripts.Coin.CoinTypes
         
         private void OnTriggerExit2D(Collider2D other)
         {
-            if (other.gameObject.CompareTag(CoinManager.Camera))
+            if (other.gameObject == Camera.main.gameObject)
             {
                 CoinManager.Instance.DespawnCoin(this.gameObject);
             }

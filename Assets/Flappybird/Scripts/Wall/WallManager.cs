@@ -9,6 +9,8 @@ namespace Flappybird.Scripts.Wall
     {
         [SerializeField] public GameObject wallPrefab;
         [SerializeField] private float spawnXOffset = 15;
+        [SerializeField] private float spawnMaxYOffset = 4.5f;
+        [SerializeField] private float spawnMinYOffset = -2.5f;
         
         private Coroutine spawnCoroutine;
         private readonly WaitForSeconds spawnRoutine = new WaitForSeconds(2.5f);
@@ -16,8 +18,6 @@ namespace Flappybird.Scripts.Wall
 
         private void Start()
         {
-            WallPool.Instance.CreateWallPool();
-
             spawnCoroutine = StartCoroutine(StartSpawnCoroutine());
         }
 
@@ -30,31 +30,14 @@ namespace Flappybird.Scripts.Wall
             if (wall == null)
                 return;
             
-            Vector3 position = wall.transform.position;
-            position.x += spawnXOffset;
-            wall.transform.position = position;
-
-            if (!wall.TryGetComponent<WallMovement>(out _))
-            {
-                wall.AddComponent<WallMovement>();
-            }
+            Vector3 spawnPosition = new Vector3(spawnXOffset, Random.Range(spawnMinYOffset, spawnMaxYOffset), 0);
+            
+            wall.transform.position = spawnPosition;
         }
 
 
         public void DespawnWall(GameObject wall)
         {
-            var moveComponent = wall.GetComponent<WallMovement>();
-
-            if (moveComponent != null)
-            {
-                Destroy(moveComponent);
-            }
-            
-            Vector3 position = wall.transform.position;
-            position.x = 0f;
-            wall.transform.position = position;
-            
-            
             WallPool.Instance.ReturnWallToPool(wall);
         }
 
