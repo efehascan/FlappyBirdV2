@@ -12,9 +12,9 @@ namespace Flappybird.Scripts.Wall
         [SerializeField] private float spawnMaxYOffset = 4.5f;
         [SerializeField] private float spawnMinYOffset = -2.5f;
         [SerializeField] private bool isSpawning = false;
+        [SerializeField] private float spawnInterval = 2f;
         
         private Coroutine spawnCoroutine;
-        private readonly WaitForSeconds spawnRoutine = new WaitForSeconds(2.5f);
         
 
         private void Start()
@@ -50,7 +50,7 @@ namespace Flappybird.Scripts.Wall
             {
                 SpawnWall();
 
-                yield return spawnRoutine;
+                yield return new WaitForSeconds(spawnInterval);
             }
         }
 
@@ -64,6 +64,7 @@ namespace Flappybird.Scripts.Wall
                 StopCoroutine(spawnCoroutine);
                 spawnCoroutine = null;
             }
+            isSpawning = false;
         }
 
         private void OnDestroy()
@@ -73,6 +74,7 @@ namespace Flappybird.Scripts.Wall
                 StopCoroutine(spawnCoroutine);
                 spawnCoroutine = null;
             }
+            isSpawning = false;
         }
         #endregion
 
