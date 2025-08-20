@@ -10,14 +10,5 @@ namespace Flappybird.Scripts.Coin.CoinTypes
             CoinManager.Instance.AddCoin(1);
             CoinManager.Instance.DespawnCoin(this.gameObject);
         }
-        
-        private void OnTriggerExit2D(Collider2D other)
-        {
-            if (other.gameObject == Camera.main.gameObject)
-            {
-                CoinManager.Instance.DespawnCoin(this.gameObject);
-            }
-            
-        }
     }
 }

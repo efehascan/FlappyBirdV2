@@ -15,7 +15,6 @@ namespace Flappybird.Scripts.Coin
         private Coroutine spawnCoroutine;
         private readonly WaitForSeconds spawnRoutine = new WaitForSeconds(2.5f);
         
-        
 
         [Header("Coin Settings")]
         [SerializeField] public int runCoinValue = 0;

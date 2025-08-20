@@ -7,8 +7,6 @@ namespace Flappybird.Scripts.Wall
     {
         [SerializeField] private float movementSpeed = 3.5f;
         
-
-
         private void FixedUpdate()
         {
             MoveCoin();
