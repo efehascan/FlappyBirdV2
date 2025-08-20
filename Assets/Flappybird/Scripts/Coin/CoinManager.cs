@@ -11,9 +11,9 @@ namespace Flappybird.Scripts.Coin
     {
 
         [SerializeField] public GameObject[] coinPrefabs;
+        [SerializeField] private float spawnInterval = 2.5f;
         
         private Coroutine spawnCoroutine;
-        private readonly WaitForSeconds spawnRoutine = new WaitForSeconds(2.5f);
         
 
         [Header("Coin Settings")]
@@ -65,7 +65,7 @@ namespace Flappybird.Scripts.Coin
             {
                 SpawnCoin();
 
-                yield return spawnRoutine;
+                yield return new WaitForSeconds(spawnInterval);
             }
         }
 
