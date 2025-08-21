@@ -12,6 +12,7 @@ namespace Flappybird.Scripts.Coin
 
         [SerializeField] public GameObject[] coinPrefabs;
         [SerializeField] private float spawnInterval = 2.5f;
+        [SerializeField] private bool isSpawning = false;
         
         private Coroutine spawnCoroutine;
         
@@ -23,6 +24,7 @@ namespace Flappybird.Scripts.Coin
 
         private void Start()
         {
+            isSpawning = true;
             CoinPool.Instance.CreateCoinPool();
             
             
@@ -61,7 +63,7 @@ namespace Flappybird.Scripts.Coin
         
         private IEnumerator StartSpawnCoroutine()
         {
-            while (true)
+            while (isSpawning)
             {
                 SpawnCoin();
 
@@ -77,6 +79,7 @@ namespace Flappybird.Scripts.Coin
                 StopCoroutine(spawnCoroutine);
                 spawnCoroutine = null;
             }
+            isSpawning = false;
         }
 
         private void OnDestroy()
@@ -86,6 +89,7 @@ namespace Flappybird.Scripts.Coin
                 StopCoroutine(spawnCoroutine);
                 spawnCoroutine = null;
             }
+            isSpawning = false;
         }
         
         
