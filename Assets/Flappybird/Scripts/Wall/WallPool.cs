@@ -11,12 +11,6 @@ namespace Flappybird.Scripts.Wall
         [SerializeField] private Transform parent;
         
         private List<GameObject> wallPool;
-        
-
-        private void Awake()
-        {
-            CreateWallPool();
-        }
 
 
         public void CreateWallPool()

@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Flappybird.Scripts.SingletonPattern;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 
 namespace Flappybird.Scripts.Wall
@@ -17,10 +19,11 @@ namespace Flappybird.Scripts.Wall
         private Coroutine spawnCoroutine;
         
 
-        private void Start()
+        private void Awake()
         {
-            isSpawning = true;
-            spawnCoroutine = StartCoroutine(StartSpawnCoroutine());
+            WallPool.Instance.CreateWallPool();
+            
+            InvokeRepeating(nameof(SpawnWall), 0f, spawnInterval);
         }
 
         
@@ -44,39 +47,9 @@ namespace Flappybird.Scripts.Wall
         }
 
 
-        private IEnumerator StartSpawnCoroutine()
-        {
-            while (isSpawning)
-            {
-                SpawnWall();
-
-                yield return new WaitForSeconds(spawnInterval);
-            }
-        }
-
-
-        #region On Destroy & On Disable
-        
         private void OnDisable()
         {
-            if (spawnCoroutine != null)
-            {
-                StopCoroutine(spawnCoroutine);
-                spawnCoroutine = null;
-            }
-            isSpawning = false;
+            CancelInvoke(nameof(SpawnWall));
         }
-
-        private void OnDestroy()
-        {
-            if (spawnCoroutine != null)
-            {
-                StopCoroutine(spawnCoroutine);
-                spawnCoroutine = null;
-            }
-            isSpawning = false;
-        }
-        #endregion
-
     }
 }
