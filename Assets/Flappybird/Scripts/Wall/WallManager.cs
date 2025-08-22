@@ -13,7 +13,6 @@ namespace Flappybird.Scripts.Wall
         [SerializeField] private float spawnXOffset = 15;
         [SerializeField] private float spawnMaxYOffset = 4.5f;
         [SerializeField] private float spawnMinYOffset = -2.5f;
-        [SerializeField] private bool isSpawning = false;
         [SerializeField] private float spawnInterval = 2.5f;
         
         private Coroutine spawnCoroutine;
