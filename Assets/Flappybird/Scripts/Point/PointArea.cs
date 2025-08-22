@@ -7,7 +7,6 @@ namespace Flappybird.Scripts.Point
     {
         private void OnTriggerEnter2D(Collider2D other)
         {
-
             PointManager.Instance.UpdateScore();
         }
     }
