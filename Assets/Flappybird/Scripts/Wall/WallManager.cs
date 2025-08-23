@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using Flappybird.Scripts.SingletonPattern;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -17,6 +18,8 @@ namespace Flappybird.Scripts.Wall
         
         private Coroutine spawnCoroutine;
         
+        public List<GameObject> activeWalls;
+        
 
         private void Awake()
         {
@@ -30,6 +33,7 @@ namespace Flappybird.Scripts.Wall
         private void SpawnWall()
         {
             GameObject wall = WallPool.Instance.GetWallFromPool();
+            activeWalls.Add(wall);
             
             if (wall == null)
                 return;
@@ -42,6 +46,7 @@ namespace Flappybird.Scripts.Wall
 
         public void DespawnWall(GameObject wall)
         {
+            activeWalls.Remove(wall);
             WallPool.Instance.ReturnWallToPool(wall);
         }
 
