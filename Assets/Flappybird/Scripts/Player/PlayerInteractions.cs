@@ -7,14 +7,10 @@ namespace Flappybird.Scripts.Player
 {
     public class PlayerInteractions : MonoBehaviour
     {
-        
-        private const string Coin = "Coin";
-
         private void OnTriggerEnter2D(Collider2D other)
         {
-            ICollectible collectible = other.GetComponent<ICollectible>();
             
-            if (other.gameObject.CompareTag(Coin))
+            if (other.TryGetComponent<ICollectible>(out var collectible))
             {
                 collectible.CollectCoin();
             }
