@@ -31,7 +31,6 @@ namespace Flappybird.Scripts.Point
         
         public void SubmitScore()
         {
-            //TODO: OYUN BİTİNCE ÇAĞIR
             FileSaveManager.Instance.TrySetNewTopScore(score);
         }
     }
