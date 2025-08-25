@@ -14,8 +14,6 @@ namespace Flappybird.Scripts.Coin
         [SerializeField] public GameObject[] coinPrefabs;
         [SerializeField] private float spawnInterval = 2.5f;
         
-        private Coroutine spawnCoroutine;
-        
         private GameObject firstWall;
         private GameObject secondWall;
         
@@ -40,7 +38,7 @@ namespace Flappybird.Scripts.Coin
             OnCoinValueChanged?.Invoke();
         }
 
-        private void SpawnCoin()
+        public void SpawnCoin()
         {
             CalculateXPositions();
             if (firstWall == null || secondWall == null)

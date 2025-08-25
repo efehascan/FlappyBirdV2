@@ -9,8 +9,8 @@ namespace Flappybird.Scripts.Wall
         private const int PoolSize = 5;
         
         [SerializeField] private Transform parent;
-        
-        private List<GameObject> wallPool;
+
+        public List<GameObject> wallPool;
 
 
         public void CreateWallPool()

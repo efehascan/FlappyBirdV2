@@ -1,18 +1,20 @@
 ﻿using Flappybird.Scripts.Coin;
 using Flappybird.Scripts.Point;
+using Flappybird.Scripts.SingletonPattern;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Flappybird.Scripts.Managers.InGame
 {
-    public class FinishMenuManager : MonoBehaviour
+    public class FinishMenuManager : MonoBehaviourSingleton<FinishMenuManager>
     {
         [SerializeField] private TextMeshProUGUI collectedCoinsText;
         [SerializeField] private TextMeshProUGUI currentScoreText;
         
         
-        private void UpdateText()
+        
+        public void RefreshText()
         {
             collectedCoinsText.text = "Collected Coins: " + CoinManager.Instance.runCoinValue;
 
@@ -20,13 +22,13 @@ namespace Flappybird.Scripts.Managers.InGame
         }
 
         
-        private void ReturnMainMenu()
+        public void ReturnMainMenu()
         {
-            
-        SceneManager.LoadScene("MainMenu");}
+            SceneManager.LoadSceneAsync(0);
+        }
         
         
-        private void RestartGame()
+        public void RestartGame()
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }

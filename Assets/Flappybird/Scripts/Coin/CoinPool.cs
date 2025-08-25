@@ -10,7 +10,7 @@ namespace Flappybird.Scripts.Coin
         
         [SerializeField] private Transform parent;
         
-        private List<GameObject> coinPool;
+        public List<GameObject> coinPool;
 
 
         /// <summary>

@@ -16,8 +16,6 @@ namespace Flappybird.Scripts.Wall
         [SerializeField] private float spawnMinYOffset = -2.5f;
         [SerializeField] private float spawnInterval = 2.5f;
         
-        private Coroutine spawnCoroutine;
-        
         public List<GameObject> activeWalls;
         
 
@@ -28,9 +26,8 @@ namespace Flappybird.Scripts.Wall
             InvokeRepeating(nameof(SpawnWall), 0f, spawnInterval);
         }
 
-        
 
-        private void SpawnWall()
+        public void SpawnWall()
         {
             GameObject wall = WallPool.Instance.GetWallFromPool();
             activeWalls.Add(wall);

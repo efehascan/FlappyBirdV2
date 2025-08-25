@@ -21,7 +21,6 @@ namespace Flappybird.Scripts.Point
         {
             score++;
             onScoreChanged?.Invoke(score);
-            SubmitScore();
         }
 
         
