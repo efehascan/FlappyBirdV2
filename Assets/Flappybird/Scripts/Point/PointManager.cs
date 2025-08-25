@@ -6,7 +6,7 @@ namespace Flappybird.Scripts.Point
 {
     public class PointManager : MonoBehaviourSingleton<PointManager>
     {
-        private int score;
+        public int score;
         
         public static Action<int> onScoreChanged;
 
