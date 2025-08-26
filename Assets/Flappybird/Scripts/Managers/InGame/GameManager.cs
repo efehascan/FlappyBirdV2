@@ -2,6 +2,7 @@
 using Flappybird.Scripts.Point;
 using Flappybird.Scripts.SingletonPattern;
 using Flappybird.Scripts.Wall;
+using Flappybird.Scripts.Wallet;
 using UnityEngine;
 
 namespace Flappybird.Scripts.Managers.InGame
@@ -31,6 +32,8 @@ namespace Flappybird.Scripts.Managers.InGame
             WallPool.Instance.wallPool.ForEach(wall => wall.SetActive(false));
 
             PointManager.Instance.SubmitScore();
+            
+            WalletService.Instance.AddCoinToWallet(CoinManager.Instance.runCoinValue);
             
         }
     }

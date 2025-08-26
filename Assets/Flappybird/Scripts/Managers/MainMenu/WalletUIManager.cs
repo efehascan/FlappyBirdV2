@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
 
 namespace Flappybird.Scripts.Managers.MainMenu
@@ -7,5 +8,9 @@ namespace Flappybird.Scripts.Managers.MainMenu
     {
         [SerializeField] private TMP_Text walletText;
 
+        private void Start()
+        {
+            walletText.text = "Wallet: " + FileSaveManager.Instance.GetWallet();
+        }
     }
 }

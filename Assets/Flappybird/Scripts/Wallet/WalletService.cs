@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Flappybird.Scripts.Wallet
 {
-    public class WalletService  : MonoBehaviourSingleton<WalletService>
+    public class WalletService  : MonoBehaviourSingletonPersistent<WalletService>
     {
         public static Action onCoinsChanged;
         private int coins;
@@ -27,7 +27,7 @@ namespace Flappybird.Scripts.Wallet
             }
             
             coins += amount;
-            
+            Save(coins);
         }
         
         public void Save(int totalCoins)
