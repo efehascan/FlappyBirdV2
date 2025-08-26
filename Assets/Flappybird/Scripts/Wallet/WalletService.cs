@@ -1,8 +1,6 @@
 ﻿using System;
 using Flappybird.Scripts.Managers;
 using Flappybird.Scripts.SingletonPattern;
-using Unity.IO.LowLevel.Unsafe;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Flappybird.Scripts.Wallet
@@ -13,8 +11,11 @@ namespace Flappybird.Scripts.Wallet
         private int coins;
 
 
-        private void Awake()
+        public override void Awake()
         {
+            base.Awake();
+            
+            
             onCoinsChanged?.Invoke();
         }
 
