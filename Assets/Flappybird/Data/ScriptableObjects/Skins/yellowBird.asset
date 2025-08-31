@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0b45dceec874557a88e3cc507e0274f, type: 3}
-  m_Name: blueBird
+  m_Name: yellowBird
   m_EditorClassIdentifier: 
-  id: 2
-  displayName: BlueBird
-  price: 50
-  sprite: {fileID: 21300000, guid: ed9f9e3be121fd74eab291eeb91a774e, type: 3}
-  animatorOverride: {fileID: 9100000, guid: 669449439177bc345af33a996d5139a5, type: 2}
+  id: 4
+  displayName: YellowBird
+  price: 250
+  sprite: {fileID: 21300000, guid: 68c8084df5a2e7142b7bb16c8dfd7e76, type: 3}
+  animatorOverride: {fileID: 9100000, guid: 8cfb4236fc1702246ba42e60708f9d43, type: 2}

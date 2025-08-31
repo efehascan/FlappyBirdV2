@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0b45dceec874557a88e3cc507e0274f, type: 3}
-  m_Name: blueBird
+  m_Name: pinkBird
   m_EditorClassIdentifier: 
-  id: 2
-  displayName: BlueBird
-  price: 50
-  sprite: {fileID: 21300000, guid: ed9f9e3be121fd74eab291eeb91a774e, type: 3}
-  animatorOverride: {fileID: 9100000, guid: 669449439177bc345af33a996d5139a5, type: 2}
+  id: 3
+  displayName: PinkBird
+  price: 100
+  sprite: {fileID: 21300000, guid: a1438c21459834648b47de46dbd1f174, type: 3}
+  animatorOverride: {fileID: 9100000, guid: dfbe3cff1db133b488fcc54cc3e28aa4, type: 2}
