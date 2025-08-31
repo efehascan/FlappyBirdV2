@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Flappybird.Scripts.UI.MainMenu;
+using UnityEngine;
 
 namespace Flappybird.Scripts.UI.Shop
 {
@@ -24,7 +25,10 @@ namespace Flappybird.Scripts.UI.Shop
 
         private void Rebuild()
         {
-            foreach (Transform t in contentParent) Destroy(t.gameObject);
+            WalletUIManager.Instance.RefreshWallet();
+            
+            foreach (Transform t in contentParent) 
+                Destroy(t.gameObject);
             foreach (var item in database.Items)
                 Instantiate(skinButtonPrefab, contentParent).Bind(item);
         }

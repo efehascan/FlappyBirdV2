@@ -21,6 +21,11 @@ namespace Flappybird.Scripts.UI.MainMenu
         {
             Application.Quit();
         }
+
+        public void RebirthButton()
+        {
+            PlayerPrefs.DeleteAll();
+        }
         
     }
 }
