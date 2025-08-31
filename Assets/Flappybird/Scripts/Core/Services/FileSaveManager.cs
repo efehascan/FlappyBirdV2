@@ -62,7 +62,7 @@ namespace Flappybird.Scripts.Core.Services
             return PlayerPrefs.GetInt(SkinOwnKey(id), 0) == 1;
         }
 
-        private void SetSkinOwned(string id, bool isOwned = true)
+        public void SetSkinOwned(string id, bool isOwned = true)
         {
             PlayerPrefs.SetInt(SkinOwnKey(id), isOwned ? 1 : 0);
             PlayerPrefs.Save();
