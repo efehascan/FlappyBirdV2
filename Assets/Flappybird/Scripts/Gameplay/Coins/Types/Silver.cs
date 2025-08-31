@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using Flappybird.Scripts.Gameplay.Coins.Interfaces;
+using UnityEngine;
 
-namespace Flappybird.Scripts.Coin.CoinTypes
+namespace Flappybird.Scripts.Gameplay.Coins.Types
 {
     public class Silver : MonoBehaviour,  ICollectible
     {

@@ -1,11 +1,9 @@
-﻿using System;
-using Flappybird.Scripts.Coin;
-using Flappybird.Scripts.Managers.InGame;
-using Flappybird.Scripts.ObserverPattern;
-using Flappybird.Scripts.Wall;
+﻿using Flappybird.Scripts.Core.Game;
+using Flappybird.Scripts.Gameplay.Coins.Interfaces;
+using Flappybird.Scripts.Gameplay.Walls;
 using UnityEngine;
 
-namespace Flappybird.Scripts.Player
+namespace Flappybird.Scripts.Gameplay.Player
 {
     public class PlayerInteractions : MonoBehaviour
     {

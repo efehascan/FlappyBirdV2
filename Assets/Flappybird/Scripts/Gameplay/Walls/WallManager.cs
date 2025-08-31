@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using Flappybird.Scripts.SingletonPattern;
+﻿using System.Collections.Generic;
+using Flappybird.Scripts.Core.Patterns;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 
-namespace Flappybird.Scripts.Wall
+namespace Flappybird.Scripts.Gameplay.Walls
 {
     public class WallManager : MonoBehaviourSingleton<WallManager>
     {

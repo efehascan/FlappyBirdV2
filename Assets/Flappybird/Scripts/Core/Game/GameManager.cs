@@ -1,11 +1,12 @@
-﻿using Flappybird.Scripts.Coin;
-using Flappybird.Scripts.Point;
-using Flappybird.Scripts.SingletonPattern;
-using Flappybird.Scripts.Wall;
-using Flappybird.Scripts.Wallet;
+﻿using Flappybird.Scripts.Core.Patterns;
+using Flappybird.Scripts.Core.Services;
+using Flappybird.Scripts.Gameplay.Coins;
+using Flappybird.Scripts.Gameplay.Points;
+using Flappybird.Scripts.Gameplay.Walls;
+using Flappybird.Scripts.UI.InGame;
 using UnityEngine;
 
-namespace Flappybird.Scripts.Managers.InGame
+namespace Flappybird.Scripts.Core.Game
 {
     public class GameManager : MonoBehaviourSingleton<GameManager>
     {

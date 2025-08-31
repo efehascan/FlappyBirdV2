@@ -1,7 +1,6 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Flappybird.Scripts.Point
+namespace Flappybird.Scripts.Gameplay.Points
 {
     public class PointArea : MonoBehaviour
     {

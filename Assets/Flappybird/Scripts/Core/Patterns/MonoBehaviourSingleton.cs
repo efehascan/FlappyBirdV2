@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Flappybird.Scripts.SingletonPattern
+namespace Flappybird.Scripts.Core.Patterns
 {
     public class MonoBehaviourSingleton<T> : MonoBehaviour
         where T : Component

@@ -1,4 +1,4 @@
-﻿namespace Flappybird.Scripts.Coin
+﻿namespace Flappybird.Scripts.Gameplay.Coins.Interfaces
 {
     public interface ICollectible
     {

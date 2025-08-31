@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Flappybird.Scripts.ObserverPattern
+namespace Flappybird.Scripts.Core.Patterns.ObserverPattern
 {
     public abstract class Subject : MonoBehaviour
     {

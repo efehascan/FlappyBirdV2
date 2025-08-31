@@ -1,8 +1,8 @@
-﻿using UnityEngine;
-using System.Collections.Generic;
-using Flappybird.Scripts.SingletonPattern;
+﻿using System.Collections.Generic;
+using Flappybird.Scripts.Core.Patterns;
+using UnityEngine;
 
-namespace Flappybird.Scripts.Wall
+namespace Flappybird.Scripts.Gameplay.Walls
 {
     public class WallPool : MonoBehaviourSingleton<WallPool>
     {

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Flappybird.Scripts.Coin
+namespace Flappybird.Scripts.Gameplay.Coins
 {
     public class CoinController : MonoBehaviour
     {

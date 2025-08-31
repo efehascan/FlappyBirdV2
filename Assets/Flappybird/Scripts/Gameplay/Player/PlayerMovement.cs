@@ -1,7 +1,6 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Flappybird.Scripts.Player
+namespace Flappybird.Scripts.Gameplay.Player
 {
     
     [RequireComponent((typeof(Rigidbody2D)))]

@@ -1,7 +1,7 @@
-﻿using Flappybird.Scripts.SingletonPattern;
+﻿using Flappybird.Scripts.Core.Patterns;
 using UnityEngine;
 
-namespace Flappybird.Scripts.Managers
+namespace Flappybird.Scripts.Core.Services
 {
     public class FileSaveManager : MonoBehaviourSingletonPersistent<FileSaveManager>
     {

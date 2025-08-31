@@ -1,8 +1,8 @@
-﻿using Flappybird.Scripts.Player;
+﻿using Flappybird.Scripts.Gameplay.Coins;
 using TMPro;
 using UnityEngine;
 
-namespace Flappybird.Scripts.Coin
+namespace Flappybird.Scripts.UI.InGame
 {
     public class CoinUI : MonoBehaviour
     {

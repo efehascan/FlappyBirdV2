@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Flappybird.Scripts.Gameplay.Points;
 using TMPro;
 using UnityEngine;
 
-namespace Flappybird.Scripts.Point
+namespace Flappybird.Scripts.UI.InGame
 {
     public class ScoreUIManager : MonoBehaviour
     {

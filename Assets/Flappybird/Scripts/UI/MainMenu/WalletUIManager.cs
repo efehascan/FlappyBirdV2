@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Flappybird.Scripts.Core.Services;
 using TMPro;
 using UnityEngine;
 
-namespace Flappybird.Scripts.Managers.MainMenu
+namespace Flappybird.Scripts.UI.MainMenu
 {
     public class WalletUIManager : MonoBehaviour
     {

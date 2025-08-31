@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Flappybird.Scripts.SingletonPattern;
+using Flappybird.Scripts.Core.Patterns;
 using UnityEngine;
 
-namespace Flappybird.Scripts.Coin
+namespace Flappybird.Scripts.Gameplay.Coins
 {
     public class CoinPool : MonoBehaviourSingleton<CoinPool>
     {

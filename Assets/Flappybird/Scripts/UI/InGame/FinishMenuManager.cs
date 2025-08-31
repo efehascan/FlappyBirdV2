@@ -1,11 +1,11 @@
-﻿using Flappybird.Scripts.Coin;
-using Flappybird.Scripts.Point;
-using Flappybird.Scripts.SingletonPattern;
+﻿using Flappybird.Scripts.Core.Patterns;
+using Flappybird.Scripts.Gameplay.Coins;
+using Flappybird.Scripts.Gameplay.Points;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Flappybird.Scripts.Managers.InGame
+namespace Flappybird.Scripts.UI.InGame
 {
     public class FinishMenuManager : MonoBehaviourSingleton<FinishMenuManager>
     {

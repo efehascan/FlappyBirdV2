@@ -1,7 +1,6 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Flappybird.Scripts.Wall
+namespace Flappybird.Scripts.Gameplay.Walls
 {
     public class WallController : MonoBehaviour
     {

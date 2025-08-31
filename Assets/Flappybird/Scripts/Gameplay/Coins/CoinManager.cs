@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections;
 using System.Linq;
-using Flappybird.Scripts.SingletonPattern;
-using Flappybird.Scripts.Wall;
+using Flappybird.Scripts.Core.Patterns;
+using Flappybird.Scripts.Gameplay.Walls;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace Flappybird.Scripts.Coin
+namespace Flappybird.Scripts.Gameplay.Coins
 {
     public class CoinManager : MonoBehaviourSingleton<CoinManager>
     {

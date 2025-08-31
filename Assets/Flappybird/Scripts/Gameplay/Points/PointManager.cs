@@ -1,8 +1,8 @@
 ﻿using System;
-using Flappybird.Scripts.SingletonPattern;
-using Flappybird.Scripts.Managers; 
+using Flappybird.Scripts.Core.Patterns;
+using Flappybird.Scripts.Core.Services;
 
-namespace Flappybird.Scripts.Point
+namespace Flappybird.Scripts.Gameplay.Points
 {
     public class PointManager : MonoBehaviourSingleton<PointManager>
     {

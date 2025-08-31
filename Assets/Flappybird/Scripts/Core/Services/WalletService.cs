@@ -1,9 +1,8 @@
 ﻿using System;
-using Flappybird.Scripts.Managers;
-using Flappybird.Scripts.SingletonPattern;
+using Flappybird.Scripts.Core.Patterns;
 using UnityEngine;
 
-namespace Flappybird.Scripts.Wallet
+namespace Flappybird.Scripts.Core.Services
 {
     public class WalletService  : MonoBehaviourSingletonPersistent<WalletService>
     {

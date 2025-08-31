@@ -1,9 +1,8 @@
-﻿using System;
-using Flappybird.Scripts.Coin;
-using Flappybird.Scripts.Wall;
+﻿using Flappybird.Scripts.Gameplay.Coins;
+using Flappybird.Scripts.Gameplay.Walls;
 using UnityEngine;
 
-namespace Flappybird.Scripts.KillZone
+namespace Flappybird.Scripts.Gameplay.KillZone
 {
     public class KillZone : MonoBehaviour
     {

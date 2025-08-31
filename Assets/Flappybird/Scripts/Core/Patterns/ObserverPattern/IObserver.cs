@@ -1,6 +1,6 @@
 
 
-namespace Flappybird.Scripts.ObserverPattern
+namespace Flappybird.Scripts.Core.Patterns.ObserverPattern
 {
     public interface IObserver
     {

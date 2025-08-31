@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Flappybird.Scripts.Managers.MainMenu
+namespace Flappybird.Scripts.UI.MainMenu
 {
     public class MainMenuButtonManager : MonoBehaviour
     {
