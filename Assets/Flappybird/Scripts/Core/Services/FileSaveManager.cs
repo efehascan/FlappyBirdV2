@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Flappybird.Scripts.Core.Services
 {
+    [DefaultExecutionOrder(-200)]
     public class FileSaveManager : MonoBehaviourSingletonPersistent<FileSaveManager>
     {
         private const string CoinKey = "coin";

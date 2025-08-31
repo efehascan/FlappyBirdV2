@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0b45dceec874557a88e3cc507e0274f, type: 3}
+  m_Name: default
+  m_EditorClassIdentifier: 
+  id: 0
+  displayName: GreenBird
+  price: 0
+  sprite: {fileID: 21300000, guid: c17cbe806ce57714c89166f5b7d8b572, type: 3}
+  animatorOverride: {fileID: 9100000, guid: 2e3c766f9b14eba4fa13efd8c2f765a6, type: 2}

@@ -21,12 +21,12 @@ namespace Flappybird.Scripts.UI.Shop
 
         private void Awake()
         {
-            
+            EnsureDefaultOwned();
         }
 
         private void Start()
         {
-            
+            ApplyEquipped();
         }
         
         private void EnsureDefaultOwned()
