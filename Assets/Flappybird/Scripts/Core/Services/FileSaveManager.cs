@@ -7,6 +7,9 @@ namespace Flappybird.Scripts.Core.Services
     {
         private const string CoinKey = "coin";
         private const string TopScoreKey = "topScore";
+        
+        private const string EquippedSkinKey = "equippedSkin";
+        private string SkinOwnKey(string id) => $"skin_{id}";
 
         public override void Awake()
         {
@@ -52,5 +55,31 @@ namespace Flappybird.Scripts.Core.Services
         {
             return PlayerPrefs.GetInt(TopScoreKey, 0);
         }
+        
+        // SKINS SYSTEM
+        public bool IsSkinOwned(string id)
+        {
+            return PlayerPrefs.GetInt(SkinOwnKey(id), 0) == 1;
+        }
+
+        private void SetSkinOwned(string id, bool isOwned = true)
+        {
+            PlayerPrefs.SetInt(SkinOwnKey(id), isOwned ? 1 : 0);
+            PlayerPrefs.Save();
+        }
+
+        public string GetEquippedSkin()
+        {
+            return PlayerPrefs.GetString(EquippedSkinKey, "default");
+        }
+
+        public void SetEquippedSkin(string id)
+        {
+            PlayerPrefs.SetString(EquippedSkinKey, id);
+            PlayerPrefs.Save();
+        }
+        
+        
+        
     }
 }
