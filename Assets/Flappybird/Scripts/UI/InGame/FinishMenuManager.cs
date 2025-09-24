@@ -1,5 +1,6 @@
 ﻿using Flappybird.Scripts.Core.Patterns;
 using Flappybird.Scripts.Gameplay.Coins;
+using Flappybird.Scripts.Gameplay.Player;
 using Flappybird.Scripts.Gameplay.Points;
 using TMPro;
 using UnityEngine;
@@ -30,6 +31,7 @@ namespace Flappybird.Scripts.UI.InGame
         
         public void RestartGame()
         {
+            PlayerManager.Instance.ReturnStartPosition();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         

@@ -19,6 +19,11 @@ namespace Flappybird.Scripts.Gameplay.Player
             startPosition = transform.position;
         }
 
+        private void Start()
+        {
+            ReturnStartPosition();
+        }
+
         private void OnEnable()
         {
             SceneManager.sceneLoaded += OnSceneLoaded;
@@ -37,15 +42,19 @@ namespace Flappybird.Scripts.Gameplay.Player
             }else if (scene.buildIndex == 0)
             {
                 // Ana menüde başlangıç noktasına dön
-                transform.position = startPosition;
+                ReturnStartPosition();
                 rb.velocity = Vector2.zero;        // hareket varsa sıfırla
                 rb.angularVelocity = 0f;           // dönme hızını sıfırla
 
                 // Hiç hareket etmesin (pozisyon + rotasyon tamamen kitli)
                 rb.constraints = RigidbodyConstraints2D.FreezeAll;
             }
-            
-            
         }
+        
+        public void ReturnStartPosition()
+        {
+            transform.position = startPosition;
+        }
+        
     }
 }
